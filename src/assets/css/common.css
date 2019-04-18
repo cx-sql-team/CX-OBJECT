@@ -1,4 +1,4 @@
-html{font-family: Helvetica,"PingFang SC";height:100%}
+html{font-family: Helvetica,"PingFang SC";height:100%;min-width: 1280px;min-height: 653px;overflow: hidden;}
 body,ul,li,dl,dt,dd,p,ol,h1,h2,h3,h4,h5,h6,form,img,table,fieldset,legend{margin:0; padding:0;}
 ul,li,ol{list-style:none;}
 img,fieldset{border:0; }
@@ -7,3 +7,7 @@ a{text-decoration:none; color:#333;}
 h1,h2,h3,h4,h5,h6{font-weight:400;}
 body {font-size: 16px;height:100%;color: #2c3e50;}
 input,a{outline:none;}
+
+
+
+

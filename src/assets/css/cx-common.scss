@@ -1,0 +1,381 @@
+@import "rem";
+
+
+@media screen and (max-width: 1400px) {
+  html {
+    font-size: 12px;
+  }
+  .el-menu-item, .el-tabs__item, .el-submenu__title {
+    font-size: 13px !important;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  html {
+    font-size: 16px;
+  }
+  .el-menu-item {
+    font-size: 16px !important;
+  }
+  .el-submenu__title, .el-menu-item {
+    font-size: 16px !important;
+
+    .iconfont {
+      font-size: 16px !important;
+    }
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  html {
+    font-size: 18px;
+  }
+  .el-menu-item {
+    font-size: 16px !important;
+  }
+  .el-submenu__title, .el-menu-item {
+    font-size: 16px !important;
+
+    .iconfont {
+      font-size: 16px !important;
+    }
+  }
+}
+
+
+// 菜单
+.el-menu {
+  border-right-color: rgb(46, 66, 93);
+}
+
+// 圆按钮
+.el-button--mini.is-circle {
+  padding: rem(6px);
+}
+
+
+// 表格
+.el-table--mini th, .el-table--small th {
+  padding: rem(8px) 0;
+}
+
+.el-table--mini td {
+  padding: 0;
+
+  .table-cell-span {
+    line-height: 36px;
+  }
+}
+
+.el-table--small td {
+  padding: 1px;
+
+  .table-cell-span {
+    line-height: 42px;
+  }
+}
+
+.el-table--medium td {
+  padding: 1px;
+
+  .table-cell-span {
+    line-height: 56px;
+  }
+}
+
+.el-table th {
+  background-color: #f7f7f7;
+  color: #303133;
+}
+
+
+.one-table {
+  float: left;
+  width: 100%;
+
+  .button-bg {
+    margin-bottom: rem(10px);
+  }
+}
+
+// 弹框
+.el-dialog__footer {
+  overflow: hidden;
+}
+
+.el-dialog {
+  margin-top: 10Vh !important;
+}
+
+.el-dialog__body {
+  padding: 10px 20px !important;
+}
+
+
+//布局
+#__layout > div {
+  height: 100%;
+}
+
+.__view {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+// 分割线
+.line {
+  display: block;
+  border-bottom: 1px solid #cecece;
+  margin-bottom: 20px;
+}
+
+// 表格内点击跳转样式
+.link-style {
+  color: #409EFF;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline
+}
+
+// 表单
+.el-input-number .el-input__inner {
+  text-align: left !important;
+}
+
+
+
+
+.disabled-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: #fff;
+  opacity: 0.7;
+  cursor: not-allowed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    font-size: 20px;
+    color: #0a48d1;
+    font-weight: bold;
+  }
+}
+
+//.el-scrollbar__wrap {
+//  overflow-x: hidden!important;
+//}
+
+
+
+
+
+
+
+
+// 气泡设置
+.el-tooltip__popper.is-light {
+  background: #fff;
+  border: 1px solid #303133;
+}
+
+.el-tooltip__popper.is-dark {
+  background: #303133;
+  color: #fff;
+}
+
+.el-tooltip__popper {
+  position: absolute;
+  border-radius: 4px;
+  padding: 10px;
+  z-index: 2000;
+  font-size: 14px;
+  line-height: 1.2;
+  min-width: 10px;
+}
+
+
+//表格树
+.resource {
+  padding-left: 10px;
+  .el-tree {
+    background-color: rgba(0, 0, 0, 0);
+    border-top: 1px solid #ebeef5;
+    border-left: 1px solid #ebeef5;
+
+    .custom-tree-node {
+      height: 35px;
+      width: 100%;
+
+      .tr:first-child {
+        text-indent: 0px;
+      }
+
+      .tr {
+        float: left;
+        height: 100%;
+        line-height: 35px;
+        border-right: 1px solid #ebeef5;
+        text-indent: 10px;
+        color: #606266;
+      }
+    }
+
+    .el-tree-node {
+      font-size: 14px;
+
+      .el-tree-node__content {
+        border-bottom: 1px solid #ebeef5;
+        height: 35px;
+      }
+    }
+  }
+
+  .tree-table-title {
+    .tr {
+      float: left;
+      height: 100%;
+      line-height: 35px;
+      color: #909399;
+      font-size: 14px;
+      border-right: 1px solid #ebeef5;
+      font-weight: bold;
+      text-indent: 10px;
+    }
+  }
+}
+
+// tab页
+.ew-tabs {
+  box-shadow: none !important;
+
+  .el-tabs__nav > .el-tabs__item {
+    border: none !important;
+  }
+
+  div > div > div > .el-tabs__nav > .el-tabs__item:hover {
+    border: none !important;
+    background: #f5f7fa !important;
+  }
+
+  div > div > div > .el-tabs__nav > .is-active {
+    border: none !important;
+    border-right: 1px solid #dcdfe6 !important;
+    border-left: 1px solid #dcdfe6 !important;
+  }
+
+  div > div > div > .el-tabs__nav > .is-active:hover {
+    border: none !important;
+    background: #fff !important;
+  }
+}
+
+
+
+
+//编辑跳转
+.skip-dialog-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  z-index: 1000;
+
+  button {
+    float: right;
+    margin-top: 20px
+  }
+}
+
+.el-tabs__new-tab {
+  border: none !important;
+  width: rem(60px) !important;
+  margin-top: rem(16px) !important;
+  font-size: rem(16px) !important;
+
+  :before {
+    font-size: rem(28px) !important;
+  }
+}
+
+.iconfont {
+  font-size: 14px !important;
+}
+
+
+//页面跳转过度动画
+
+.page-enter-active {
+  animation: bounce-in .4s;
+}
+
+.page-leave-active {
+  transition: opacity 0s;
+}
+
+.page-enter, .page-leave {
+  opacity: 0;
+}
+
+
+//.page-enter-active {
+//  animation: bounce-in2 .4s reverse;
+//}
+//
+//
+//.page-leave-active {
+//  animation: bounce-in2 .4s
+//}
+//
+//.page-enter, .page-leave-active {
+//  transform: rotate(0deg)
+//}
+
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0
+  }
+  40% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+@keyframes bounce-in2 {
+  0% {
+    transform: rotateY(0deg)
+  }
+  100% {
+    transform: rotateY(90deg)
+  }
+}
+
+//系统页动画
+
+.sys-enter-active {
+  animation: bounce-in1 0.5s;
+}
+
+.sys-leave-active {
+  transition: opacity 1s;
+}
+
+.sys-enter, .page-leave {
+  opacity: 0;
+}
+
+@keyframes bounce-in1 {
+  0% {
+    opacity: 0
+  }
+  40% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}

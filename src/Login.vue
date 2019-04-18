@@ -45,6 +45,13 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 
+interface User {
+    userName: string;
+    passWord: string;
+    appCode: string;
+}
+
+
 @Component({})
 export default class Login extends Vue {
     // data
@@ -54,34 +61,27 @@ export default class Login extends Vue {
     public wrongInfo: string = 'Incorrect username or password'; // 错误提示内容
     // medths
     private toLogin() {
-        console.log(888);
-        //   this.$store.commit('formatterRouter')
-        //   this.$router.push('/dcs/main/home')
-        // if(!this.account && !this.passNum) return;
-        // let params = {},_this = this;
-        // params.userName = this.account;
-        // params.passWord = this.passNum;
-        // params.appCode = 'DCS';
-        // axios({url: getServerUrl + 'auth/login', data: params,method: 'post'}).then(res => {
-        //     if(res.data.success) {
-        //         localStorage.setItem('jwt',res.data.jwt);
-        //         localStorage.setItem('name',res.data.uName);
-        //         localStorage.setItem('orgName',res.data.orgName);
-        //         localStorage.setItem('orgCode',res.data.orgCode);
-        //         localStorage.setItem('code',res.data.uCode);
-        //         // this.message('Login success','success');
-        //         // setTimeout(function () {
-        //         this.$store.commit('formatterRouter')
-        //         this.$router.push('/dcs/main/home')
-        //         // },1000);
-        //     } else {
-        //         if (res.data.errorCode == 4012) {
-        //             this.message('Permission denied')
-        //         } else {
-        //             this.wrongNum = true;
-        //         }
-        //     }
-        // });
+        const params = {userName: '', passWord: '', appCode: ''};
+        params.userName = this.account;
+        params.passWord = this.passNum;
+        params.appCode = 'DCS';
+        this.goLogin(params);
+    }
+    private async goLogin(params: User) {
+        try {
+            const res = await this.$ajax({url: 'auth/login', params, method: 'post'});
+            localStorage.setItem('jwt', res.jwt);
+            localStorage.setItem('name', res.uName);
+            localStorage.setItem('orgName', res.orgName);
+            localStorage.setItem('orgCode', res.orgCode);
+            localStorage.setItem('code', res.uCode);
+            // this.message('Login success','success');
+            // setTimeout(function () {
+            // this.$store.commit('formatterRouter');
+            this.$router.push('/main');
+        } catch (err) {
+            console.log(err, 666);
+        }
     }
     private message(message: string = '', type: string = 'warning'): void {
         this.$message({

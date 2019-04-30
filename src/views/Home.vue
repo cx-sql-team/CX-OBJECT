@@ -61,7 +61,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { pageOptions, pageBtnClick, dialogOk} from '../mixins/index.js';
+import { pageOptions, pageBtnClick, dialogOk} from '@/mixins/index.js';
 
 
 
@@ -101,7 +101,13 @@ import { pageOptions, pageBtnClick, dialogOk} from '../mixins/index.js';
                         type: 'otherCombo',
                         name: 'lang.city.countryCode',
                         field: 'countryCode',
-                        comboDatas: [{}],
+                        comboDatas: [{
+                            code: 11,
+                            name: 'demo1',
+                        }, {
+                            code: 22,
+                            name: 'demo2',
+                        }],
                         comboValue: 'code',
                         comboText: 'name',
                     },
@@ -239,6 +245,7 @@ import { pageOptions, pageBtnClick, dialogOk} from '../mixins/index.js';
                 {
                     type: 'pic',
                     name: 'lang.city.cityCode',
+                    url: '/pic',
                     field: 'code',
                     maxlength: 32,
                     required: true,
@@ -302,20 +309,6 @@ import { pageOptions, pageBtnClick, dialogOk} from '../mixins/index.js';
 })
 export default class Home extends Vue {
     private editor: boolean = false;
-
-    private mounted() {
-        const userAgent = navigator.userAgent;
-        const reIE = new RegExp('MSIE (\\d+\\.\\d+);');
-        console.log(userAgent);
-        console.log(reIE.exec(userAgent));
-        this.$ajax({
-            url: '/api/data',
-            params: {},
-            method: 'get',
-        }).then((data: any) => {
-            console.log(data);
-        });
-    }
 
     // 切换
     private btnClick() {

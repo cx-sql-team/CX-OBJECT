@@ -8,7 +8,11 @@ const city = {
     regionCode: "Region Code",
     regionName: "Region Name",
     countryCode:'Country/Area Code',
-    cityName: "City Name"
-}
+    cityName: "City Name",
+    createBy: "createBy",
+    createTime: "createTime",
+    lastUpdateBy: "lastUpdateBy",
+    lastUpdateTime: "lastUpdateTime",
+};
 
 export default city;

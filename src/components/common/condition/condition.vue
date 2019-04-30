@@ -1,6 +1,6 @@
 <template>
     <div :class="['form-item']" v-show="!option.hidden"
-         :style="{float: type !== 'tableEditor' && 'left', height: option.type === 'area' || option.type === 'checkbox' ? 'auto' : type === 'tableEditor' || type === 'search' ? size === 'medium'  ? '45px' : '39px' : (type === 'dialog' || type === 'skip') && size === 'medium' ? '58px'  :  '52px', clear: option.clearBoth && 'both', width: type === 'skip' &&  (totalWidth ? totalWidth : '50%'), paddingTop: '0px'}">
+         :style="{float: type !== 'tableEditor' && 'left', height: option.type === 'area' || option.type === 'checkbox' ? 'auto' : type === 'tableEditor' ? '40px' : type === 'search' ? size === 'medium'  ? '45px' : '39px' : (type === 'dialog' || type === 'skip') && size === 'medium' ? '58px'  :  '52px', clear: option.clearBoth && 'both', width: type === 'skip' &&  (totalWidth ? totalWidth : '50%'), paddingTop: '0px'}">
         <!--文本框-->
         <!--
         name：名称
@@ -450,7 +450,7 @@
         <template v-if="option.type === 'pic'">
             <el-form-item :label="type !== 'search' && type !== 'tableEditor' ? $t(option.name)+ ':' : ''"
                           :prop="option.field" :ref="option.ref">
-                <!--<upload :opt="option" :form="form" :onlyPic="option.onlyPic"></upload>-->
+                <upload :opt="option" :form="form" :onlyPic="option.onlyPic"></upload>
             </el-form-item>
         </template>
 
@@ -475,7 +475,7 @@
 </template>
 <script lang="ts">
     import { dateFormat, priceFormat} from '../../../utils';
-    // import upload from './upload';
+    import upload from './type/upload.vue';
     import cityData from '../../../assets/js/cityData.js';
     import iconData from '../../../assets/js/iconData.js';
     import {Component, Vue, Prop, Watch} from 'vue-property-decorator';
@@ -483,6 +483,9 @@
 
     @Component({
        // upload,
+        components: {
+            upload,
+        },
     })
     export default class CxCondition extends Vue {
         @Prop() public totalWidth!: number; // 总长度

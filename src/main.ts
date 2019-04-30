@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router/router';
@@ -7,7 +8,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import './assets/css/common.css';
 import './assets/css/cx-common.scss';
 import * as ElemtUi from 'element-ui';
-import i18n from './i18n';
+import i18n from './i18n/index';
 import components from './components/common/index.js';
 import './mock/index.js';
 
@@ -21,8 +22,6 @@ Vue.use(ElemtUi, {
 });
 
 Vue.use(components);
-
-
 
 
 new Vue({

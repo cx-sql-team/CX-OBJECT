@@ -73,8 +73,8 @@
                                         show-overflow-tooltip
                                         :width="it1.width">
                                     <template slot-scope="scope">
-                                        <div v-if="typeof it1.editor === 'function' ? it1.editor(scope.row) : it1.editor"
-                                             style="float: right; width: 80px; padding: 7px 0 7px 0.375rem">
+                                        <div class="cell-editor" v-if="typeof it1.editor === 'function' ? it1.editor(scope.row) : it1.editor"
+                                             style="float: right; width: 80px;">
                                             <template
                                                     v-if="editor && isEditor && cellEditorProp === it1.prop && editorRowId === scope.row.id">
                                                 <el-tooltip class="item" effect="dark" :content="$t('lang.common.save')"
@@ -95,7 +95,7 @@
                                             <template v-else>
                                                 <el-tooltip class="item" effect="dark" :content="$t(editorBtn.name)"
                                                             placement="top">
-                                                    <el-button style="float: right" type="primary" size="mini"
+                                                    <el-button style="display: inline-block" type="primary" size="mini"
                                                                @click="buttonClick('update', scope.row, it.prop)"
                                                                circle>
                                                         <i :class="editorBtn.icon"></i>
@@ -153,19 +153,20 @@
                                 show-overflow-tooltip
                                 :min-width="it.width">
                             <template slot-scope="scope">
-                                <div v-if="typeof it.editor === 'function' ? it.editor(scope.row) : it.editor"
-                                     style="float: right; width: 80px; padding: 7px 0 7px 0.375rem">
+                                <div class="cell-editor" v-if="typeof it.editor === 'function' ? it.editor(scope.row) : it.editor"
+                                     :style="{lineHeight: size === 'medium' ? '56px' : size === 'small' ? '45px' : '40px'}">
                                     <template
                                             v-if="editor && isEditor && cellEditorProp === it.prop && editorRowId === scope.row.id">
                                         <el-tooltip class="item" effect="dark" :content="$t('lang.common.save')"
                                                     placement="top" :key="i">
-                                            <el-button type="success" size="mini" @click="save(scope.row)" circle>
+                                            <el-button style="vertical-align: middle" type="success" size="mini" @click="save(scope.row)" circle>
                                                 <i class="icon iconfont icon-baocun"></i>
                                             </el-button>
                                         </el-tooltip>
                                         <el-tooltip v-if="!editorAddItem" class="item" effect="dark"
                                                     :content="$t('lang.common.reset')" placement="top">
                                             <el-button type="primary" size="mini"
+                                                       style="vertical-align: middle"
                                                        @click="reset(scope.row, dialog.option[dialog.option.findIndex(its => (its.tableField === it.prop || its.field === it.prop))])"
                                                        circle>
                                                 <i class="icon iconfont icon-zhongzhi"></i>
@@ -173,9 +174,9 @@
                                         </el-tooltip>
                                     </template>
                                     <template v-else>
-                                        <el-tooltip class="item" effect="dark" :content="$t(editorBtn.name)"
+                                        <el-tooltip  effect="dark" :content="$t(editorBtn.name)"
                                                     placement="top">
-                                            <el-button style="float: right" type="primary" size="mini"
+                                            <el-button style="display: inline-block; margin-left: 40px" type="primary" size="mini"
                                                        @click="buttonClick('update', scope.row, it.prop)" circle>
                                                 <i :class="editorBtn.icon"></i>
                                             </el-button>
@@ -184,7 +185,7 @@
                                 </div>
                                 <template
                                         v-if="allEditor && dialog.option.findIndex(its => (its.tableField === it.prop || its.field === it.prop)) > -1">
-                                    <div :style="{width: 'calc(100% - 14px)', marginLeft: '8px'}">
+                                    <div class="condition-style" :style="{height:  size === 'medium' ? '56px' : size === 'small' ? '45px' : '40px'}">
                                         <cx-condition :tableData="data" :tableIndex="scope.$index"
                                                       :option="dialog.option[dialog.option.findIndex(its => (its.tableField === it.prop || its.field === it.prop))]"
                                                       :form="dialog.formlist" type="tableEditor"></cx-condition>
@@ -203,12 +204,11 @@
                                 </template>
                                 <template
                                         v-else-if="editor &&  isEditor && (cellEditorProp === 'all' || cellEditorProp === it.prop)  && dialog.option.findIndex(its => (its.tableField === it.prop || its.field === it.prop)) > -1 && editorRowId === scope.row.id">
-                                    <div :style="{width: 'calc(100% - 14px)', marginLeft: '8px'}">
+                                    <div class="condition-style" :style="{height:  size === 'medium' ? '56px' : size === 'small' ? '45px' : '40px'}">
                                         <cx-condition
                                                 :option="dialog.option[dialog.option.findIndex(its => (its.tableField === it.prop || its.field === it.prop))]"
                                                 :form="dialog.formlist" type="tableEditor"></cx-condition>
                                     </div>
-
                                 </template>
                                 <template v-else-if="it.defined">
                                     <slot :name="it.prop" :row="scope.row" :value="scope.row[it.prop]"
@@ -853,5 +853,15 @@
 
     .el-table__header th[colspan='3'] > div {
         text-align: center;
+    }
+    .cell-editor {
+        float: right;
+        width: 80px;
+        padding-left: 10px;
+    }
+    .condition-style {
+        display: table-cell;
+        vertical-align: middle;
+        width: calc(100% - 100px);
     }
 </style>

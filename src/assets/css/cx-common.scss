@@ -43,6 +43,12 @@
 }
 
 
+//进度条颜色
+#nprogress .bar {
+  background: red !important; //自定义颜色
+}
+
+
 // 菜单
 .el-menu {
   border-right-color: rgb(46, 66, 93);

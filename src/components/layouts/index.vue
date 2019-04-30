@@ -32,5 +32,9 @@ export default class Login extends Vue {
 </script>
 
 <style scoped>
-
+    .container {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+    }
 </style>

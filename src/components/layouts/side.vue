@@ -138,7 +138,8 @@
                 console.log(index);
                 this.$store.commit('changeMenu', index);
             }
-            // this.$router.push('/dcs/main/' + index.split(',')[0]);
+            console.log('/main/' + index.split(',')[0]);
+            this.$router.push('/main/' + index.split(',')[0]);
         }
         private handleSubMenu(index: string, type: string) {
             const name = index.split(',')[2];
@@ -190,7 +191,7 @@
         float: left;
         position: relative;
         background: #09254b !important;
-        height: calc(100Vh - 3.4375rem);
+        height: calc(100vh - 3.4375rem);
 
         .sidebar-content {
             position: relative;

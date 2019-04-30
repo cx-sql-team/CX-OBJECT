@@ -67,6 +67,7 @@
         white-space: nowrap;
         width: 100%;
         line-height: 2.8125rem !important;
+        text-indent: 5px;
     }
 
     .el-submenu__title {

@@ -110,6 +110,7 @@ const ajax = (opts: OptsType) => {
     } else {
         delete httpDefaultOpts.params;
     }
+    console.info('%c ' + 'request:' + opts.url, 'font-weight:bold;color:green;', opts.params);
     const promise = new Promise((resolve, reject) => {
         Axios(httpDefaultOpts).then(
             (res: AxiosResponse) => {

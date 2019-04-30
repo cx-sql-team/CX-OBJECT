@@ -1,5 +1,5 @@
 // 日期格式化
-export const dateFormat = (fmt: any, dateRes: any) => {
+export const dateFormat = (fmt: any, dateRes?: any) => {
     const date = dateRes ?  new Date(dateRes.toString().indexOf('T') > -1 ? transformUTC(dateRes) : dateRes) : new Date();
     const o: any = {
         'M+' : date.getMonth() + 1,                 // 月份

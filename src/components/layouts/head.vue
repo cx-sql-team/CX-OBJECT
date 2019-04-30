@@ -124,7 +124,7 @@ export default class CxHead extends Vue {
             .language-international {
                 cursor: pointer;
                 float: right;
-                line-height: 50px;
+                line-height: rem(50px);
                 margin-left: 20px;
             }
             .user-avatar {

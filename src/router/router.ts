@@ -1,12 +1,15 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css'; // nprogress 样式文件
 
 Vue.use(Router);
 
-export default new Router({
-    mode: 'history',
-    base: process.env.BASE_URL,
+const router = new Router({
+    // mode: 'history',
+    // base: process.env.BASE_URL,
     routes: [
+        { path: '*', redirect: '/' },
         {
             path: '/',
             name: 'login',
@@ -19,18 +22,32 @@ export default new Router({
             children: [
                 {
                     path: '/',
-                    name: 'home',
+                    name: 'Home',
                     component: () => import('../views/Home.vue'),
+                },
+                {
+                    path: 'About',
+                    name: 'About',
+                    component: () => import('../views/About.vue'),
                 },
             ],
         },
-        {
-            path: '/about',
-            name: 'about',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
-        },
     ],
 });
+
+
+// 当路由开始跳转时
+router.beforeEach((to, from , next) => {
+    // 开启进度条
+    NProgress.start();
+    // 这个一定要加，没有next()页面不会跳转的。这部分还不清楚的去翻一下官网就明白了
+    next();
+});
+// 当路由跳转结束后
+router.afterEach(() => {
+    // 关闭进度条
+    NProgress.done();
+});
+
+
+export default router;

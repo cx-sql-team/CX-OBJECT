@@ -1,7 +1,10 @@
-import header from './header'
+import selected from './selected'
 import common from './common'
+import city from './city'
+
 
 export const lang = {
-    common:common,
-    header:header,
+    common,
+    selected,
+    city
 }

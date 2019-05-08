@@ -285,8 +285,8 @@
                            :page-size="pageSize">
             </el-pagination>
         </div>
-        <!--<cx-search-set v-if="searchSetV" :visible="searchSetV" :allData="searchAllData" :showData="searchShowData"-->
-                       <!--@ok="searchSetOk" @close="searchSetV = false"></cx-search-set>-->
+        <cx-filter v-if="searchSetV" :visible="searchSetV" :allData="searchAllData" :showData="searchShowData"
+                       @ok="searchSetOk" @close="searchSetV = false" />
     </div>
 </template>
 
@@ -457,7 +457,6 @@
 
 
         private mounted() {
-            // console.log(priceFormat(293849382.28))
             if (this.pageSizeDefault) {
                 this.pageSize = this.pageSizeDefault;
             }
@@ -465,9 +464,6 @@
                 const session = JSON.parse(localStorage.getItem('colums') as any);
                 if (session[this.name as string]) {
                     const showSearch = session[this.name as string];
-                    if (showSearch.right.length < 7) {
-                        showSearch.right[showSearch.right.length - 1].width = false;
-                    }
                     this.columsTrue = showSearch.right;
                 } else {
                     this.columsTrue = this.colums;
@@ -524,9 +520,6 @@
             const session: any = JSON.parse(localStorage.getItem('colums') as any);
             session[this.name as string] = {left: data, right: data1};
             localStorage.setItem('colums', JSON.stringify(session));
-            if (data1.length < 7) {
-                data1[data1.length - 1].width = false;
-            }
             this.columsTrue = data1;
             this.searchSetV = false;
         }

@@ -1,19 +1,17 @@
 <template>
     <transition name="sys">
         <div class="city">
-            <template>
-                <cx-search
-                        name="home"
-                        ruleId="ruleForm"
-                        :option="searchOption.option"
-                        @goSearch="goSearch"
-                        @goReset="goSearchReset"
-                        :formlist="searchOption.formlist"
-                        :ruleslist="searchOption.ruleslist"
-                        :labelWidth="142"
-                        :noSetButton="true"
-                />
-            </template>
+            <cx-search
+                    name="home"
+                    ruleId="ruleForm"
+                    :option="searchOption.option"
+                    @goSearch="goSearch"
+                    @goReset="goSearchReset"
+                    :formlist="searchOption.formlist"
+                    :ruleslist="searchOption.ruleslist"
+                    :labelWidth="142"
+                    :noSetButton="true"
+            />
             <div class="one-table">
                 <cx-table
                         ref="table"

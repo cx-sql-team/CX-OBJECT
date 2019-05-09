@@ -78,7 +78,7 @@ export default class Login extends Vue {
             // this.message('Login success','success');
             // setTimeout(function () {
             // this.$store.commit('formatterRouter');
-            this.$router.push('/main');
+            this.$router.push('/main/Home');
         } catch (err) {
             console.log(err, 666);
         }
@@ -160,11 +160,9 @@ export default class Login extends Vue {
         }
         .saic {
             font-size: 51px;
-            font-family: "Arial MT";
 
         }
         .intel {
-            font-family: "Arial MT";
             font-size: 24px;
             letter-spacing: 11px;
             text-indent: 16px;
@@ -231,7 +229,6 @@ export default class Login extends Vue {
             background-color: #517dc8;
             color: #ffffff;
             font-size: 22px;
-            font-family: 'Microsoft YaHei';
             border-radius: 5px;
             text-align: center;
             cursor: pointer;

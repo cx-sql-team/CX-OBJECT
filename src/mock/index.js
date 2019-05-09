@@ -192,7 +192,7 @@ const menu = {
         "displayOrder": 1,
         "level": 1,
         "parentCode": "0",
-        "uri": "",
+        "uri": "Home",
         "mnemonicCode": null,
         "childList": null
     }, {

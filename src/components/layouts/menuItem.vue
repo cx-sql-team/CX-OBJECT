@@ -82,8 +82,5 @@
         vertical-align: middle !important;
     }
 
-    .menu-span {
-        padding-top: 5px
-    }
 </style>
 

@@ -1,14 +1,17 @@
-const state = {
-    menu: [{
-        title: 'Home',
-        icon: 'icon-shouye',
-        name: 'Home',
-        closable: false,
-    }],
-    defoultTag: 'Home,icon-shouye,Home',
-    cHeight: 600,
-    size: 'small',
-};
+const state =
+    // @ts-ignore
+    sessionStorage.getItem('state') ? JSON.parse(sessionStorage.getItem('state')) :
+    {
+        menu: [{
+            title: 'Home',
+            icon: 'icon-shouye',
+            name: 'Home',
+            closable: false,
+        }],
+        defoultTag: 'Home,icon-shouye,Home',
+        cHeight: 600,
+        size: 'small',
+    };
 
 const mutations = {
     changeSize(stat: any, payload: any) {

@@ -25,17 +25,21 @@
                 </transition>
             </div>
         </el-scrollbar>
-        <!--<tabsBtn></tabsBtn>-->
+        <tabsBtn></tabsBtn>
     </div>
 </template>
 
 <script lang="ts">
-    // import tabsBtn from './tabsBtn.vue'
+    import tabsBtn from './tabsBtn.vue';
     import {Component, Vue} from 'vue-property-decorator';
     import { Getter, Mutation } from 'vuex-class';
 
 
-    @Component
+    @Component({
+        components: {
+            tabsBtn,
+        },
+    })
     export default class CxMain extends Vue {
         @Getter public menu: any;
         @Getter public cHeight: any;
@@ -52,15 +56,10 @@
         set defoultTagRes(val: string) {
             console.log(val);
         }
-
-
-
-
-
         private tabSelect(name: any) {
             const res = name.$el.getAttribute('id').substring(5);
             this.selectTag(res);
-            // this.$router.push('/main/' + res.split(',')[0]);
+            this.$router.push('/main/' + res.split(',')[0]);
         }
 
 
@@ -75,7 +74,7 @@
             }
             if (res === this.defoultTagRes.split(',')[0]) {
                 const seletTagRes = this.menu[num - 1];
-                // this.$router.push('/main/' + seletTagRes.name);
+                this.$router.push('/main/' + seletTagRes.name);
             }
             this.pxoveTag(res);
         }

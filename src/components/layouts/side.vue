@@ -135,10 +135,8 @@
         private handleMenu(index: string) {
             this.selectedItem = index.split(',')[2];
             if (index.split(',')[0]) {
-                console.log(index);
                 this.$store.commit('changeMenu', index);
             }
-            console.log('/main/' + index.split(',')[0]);
             this.$router.push('/main/' + index.split(',')[0]);
         }
         private handleSubMenu(index: string, type: string) {
@@ -164,11 +162,6 @@
 
         private mounted() {
             this.getMenu();
-            // goSysAxios('am-api/common/menuTree', {time: new Date().getTime(), kong: -1}, 'get').then((data) => {
-            //     this.createMenu(data)
-            //     this.items = data
-            //     this.data = data
-            // })
         }
 
         private async getMenu() {

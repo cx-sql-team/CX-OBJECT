@@ -5,7 +5,7 @@ img,fieldset{border:0; }
 img{display:block;}
 a{text-decoration:none; color:#333;}
 h1,h2,h3,h4,h5,h6{font-weight:400;}
-body {height:100%;color: #2c3e50;}
+body {height:100%;color: #2c3e50;; font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif}
 input,a{outline:none;}
 
 

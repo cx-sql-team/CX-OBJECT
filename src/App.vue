@@ -6,13 +6,19 @@
 
 <script lang="ts">
 import { Component, Vue} from 'vue-property-decorator';
-import {Mutation} from 'vuex-class';
+import {Mutation, Getter} from 'vuex-class';
 
 
 @Component
 export default class App extends Vue {
+    @Getter public defoultTag: any;
+    @Getter public menu: any;
+    @Getter public cHeight: any;
+    @Getter public size: any;
+
     @Mutation public changeSize: any;
     @Mutation public changeHeight: any;
+
 
 
 
@@ -28,7 +34,7 @@ export default class App extends Vue {
             this.change1();
         };
         window.addEventListener('beforeunload', () => {
-            // sessionStorage.setItem('state', JSON.stringify(state))
+            sessionStorage.setItem('state', JSON.stringify({defoultTag: this.defoultTag, menu: this.menu, cHeight: this.cHeight, size: this.size}));
             return ;
         });
     }

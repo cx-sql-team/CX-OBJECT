@@ -1,4 +1,4 @@
-html{font-family: Helvetica,"PingFang SC";height:100%}
+html{font-family: Helvetica,"PingFang SC";height:100%; min-width: 1080px}
 body,ul,li,dl,dt,dd,p,ol,h1,h2,h3,h4,h5,h6,form,img,table,fieldset,legend{margin:0; padding:0; overflow: hidden}
 ul,li,ol{list-style:none;}
 img,fieldset{border:0; }

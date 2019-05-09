@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cc33d6e-204b-4961-aa70-4c0c2ea55822" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/cx-common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/cx-common.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/button/button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/button/button.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/condition/condition.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/condition/condition.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/dialog/dialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/dialog/dialog.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/filter/filter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/filter/filter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/table/table.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/table/table.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/modules/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/About.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/About.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/common.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Login.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+            <state relative-caret-position="285">
+              <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
               <folding>
                 <element signature="e#1669#1691#0" expanded="true" />
               </folding>
@@ -36,10 +28,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/assets/css/common.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/store/modules/user.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="66" column="50" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
+            <state relative-caret-position="344">
+              <caret line="63" column="25" lean-forward="true" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -110,15 +111,6 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assets/logo.png">
           <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assets/css/cx-common.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="45" column="7" lean-forward="true" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
-            </state>
-          </provider>
         </entry>
       </file>
     </leaf>
@@ -217,7 +209,6 @@
         <option value="$PROJECT_DIR$/src/views/Home.vue" />
         <option value="$PROJECT_DIR$/src/i18n/zh/city.js" />
         <option value="$PROJECT_DIR$/src/i18n/zh/common.js" />
-        <option value="$PROJECT_DIR$/src/assets/css/common.css" />
         <option value="$PROJECT_DIR$/src/components/layouts/menuItem.vue" />
         <option value="$PROJECT_DIR$/src/App.vue" />
         <option value="$PROJECT_DIR$/src/router/router.ts" />
@@ -232,8 +223,9 @@
         <option value="$PROJECT_DIR$/src/components/common/table/table.vue" />
         <option value="$PROJECT_DIR$/src/assets/css/cx-common.scss" />
         <option value="$PROJECT_DIR$/src/views/About.vue" />
-        <option value="$PROJECT_DIR$/src/Login.vue" />
         <option value="$PROJECT_DIR$/src/store/modules/user.ts" />
+        <option value="$PROJECT_DIR$/src/Login.vue" />
+        <option value="$PROJECT_DIR$/src/assets/css/common.css" />
       </list>
     </option>
   </component>
@@ -264,26 +256,14 @@
               <item name="CX-OBJECT" type="b2602c69:ProjectViewProjectNode" />
               <item name="CX-OBJECT" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CX-OBJECT" type="b2602c69:ProjectViewProjectNode" />
               <item name="CX-OBJECT" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CX-OBJECT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CX-OBJECT" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CX-OBJECT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CX-OBJECT" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -341,18 +321,18 @@
       <workItem from="1553761704388" duration="12747000" />
       <workItem from="1553847535854" duration="208621000" />
       <workItem from="1556425665265" duration="7995000" />
-      <workItem from="1557020705319" duration="27125000" />
+      <workItem from="1557020705319" duration="29364000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256488000" />
+    <option name="totallyTimeSpent" value="258727000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1112" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17114271" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17114271" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -367,7 +347,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.32920355" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.28235295" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.28235295" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -615,13 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/css/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/i18n/zh/common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1045">
@@ -765,20 +738,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/modules/user.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="63" column="25" lean-forward="true" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Login.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+        <state relative-caret-position="285">
+          <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
           <folding>
             <element signature="e#1669#1691#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/modules/user.ts">
+    <entry file="file://$PROJECT_DIR$/src/assets/css/common.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="66" column="50" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
+        <state relative-caret-position="247">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>

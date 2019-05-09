@@ -18,7 +18,7 @@
                            :type="option.type ? option.type : 'primary'" :disabled="option.disabled">
                     <i v-if="option.icon || option.id === 'add'"
                        :class="option.icon.indexOf('el') > 0 ? [option.icon] : ['icon', 'iconfont', option.icon]"></i>
-                    {{$t(option.name)}}
+                    {{option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name}}
                 </el-button>
             </el-upload>
         </template>
@@ -27,7 +27,7 @@
                        :type="option.type ? option.type : 'primary'" @click="onClick" :disabled="option.disabled">
                 <i v-if="option.icon || option.id === 'add'"
                    :class="option.id === 'add' ? ['iconfont', 'el-icon-plus'] : option.icon.indexOf('el') > 0 ? [option.icon] : ['icon', 'iconfont', option.icon]"></i>
-                {{$t(option.name)}}
+                {{option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name}}
             </el-button>
         </template>
     </div>

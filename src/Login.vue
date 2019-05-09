@@ -44,6 +44,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import Component from 'vue-class-component';
+import {Mutation } from 'vuex-class';
 
 interface User {
     userName: string;
@@ -54,6 +55,7 @@ interface User {
 
 @Component({})
 export default class Login extends Vue {
+    @Mutation public resetState: any;
     // data
     public account: string = '';
     public passNum: string = '';
@@ -70,6 +72,7 @@ export default class Login extends Vue {
     private async goLogin(params: User) {
         try {
             const res = await this.$ajax({url: 'auth/login', params, method: 'post'});
+            this.resetState();
             localStorage.setItem('jwt', res.jwt);
             localStorage.setItem('name', res.uName);
             localStorage.setItem('orgName', res.orgName);

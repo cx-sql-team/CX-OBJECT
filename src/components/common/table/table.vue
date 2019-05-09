@@ -64,12 +64,12 @@
                 </el-table-column>
                 <template v-for="(it,i) in columsTrue">
                     <template v-if="it.children">
-                        <el-table-column :label="$t(it.label)">
+                        <el-table-column :label="it.label.indexOf('lang.') > -1 ? $t(it.label) : it.label">
                             <template v-for="(it1,is) in it.children">
                                 <el-table-column
                                         :key="is"
                                         :prop="it1.prop"
-                                        :label="$t(it1.label)"
+                                        :label="it1.label.indexOf('lang.') > -1 ? $t(it1.label) : it1.label"
                                         show-overflow-tooltip
                                         :width="it1.width">
                                     <template slot-scope="scope">
@@ -93,7 +93,7 @@
                                                 </el-tooltip>
                                             </template>
                                             <template v-else>
-                                                <el-tooltip class="item" effect="dark" :content="$t(editorBtn.name)"
+                                                <el-tooltip class="item" effect="dark" :content="editorBtn.name.indexOf('lang.') > -1 ? $t(editorBtn.name) : editorBtn.name"
                                                             placement="top">
                                                     <el-button style="display: inline-block" type="primary" size="mini"
                                                                @click="buttonClick('update', scope.row, it.prop)"
@@ -149,7 +149,7 @@
                         <el-table-column
                                 :key="i"
                                 :prop="it.prop"
-                                :label="$t(it.label)"
+                                :label="it.label.indexOf('lang.') > -1 ? $t(it.label) : it.label"
                                 show-overflow-tooltip
                                 :min-width="it.width">
                             <template slot-scope="scope">
@@ -174,7 +174,7 @@
                                         </el-tooltip>
                                     </template>
                                     <template v-else>
-                                        <el-tooltip  effect="dark" :content="$t(editorBtn.name)"
+                                        <el-tooltip  effect="dark" :content="editorBtn.name.indexOf('lang.') > -1 ? $t(editorBtn.name) : editorBtn.name"
                                                     placement="top">
                                             <el-button style="display: inline-block; margin-left: 40px" type="primary" size="mini"
                                                        @click="buttonClick('update', scope.row, it.prop)" circle>
@@ -257,7 +257,7 @@
                                     </el-tooltip>
                                 </template>
                                 <template v-else>
-                                    <el-tooltip class="item" effect="dark" :content="$t(it.name)" placement="top"
+                                    <el-tooltip class="item" effect="dark" :content="it.name.indexOf('lang.') > -1 ? $t(it.name) : it.name" placement="top"
                                                 :key="i">
                                         <el-button :type="it.id === 'dele' ? 'danger' : 'primary'" size="mini"
                                                    @click="it.id === 'dele' && editorAddItem === scope.row.id ? addEditor() : it.onClick ? it.onClick(scope.row) :buttonClick(it.id, scope.row, 'all', it)"

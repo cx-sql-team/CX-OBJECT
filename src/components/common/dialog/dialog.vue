@@ -1,5 +1,5 @@
 <template>
-    <el-dialog :title="(titleBefore ? titleBefore : '') + $t(title)" :visible="visible" @close="closeDialog"
+    <el-dialog :title="(titleBefore ? titleBefore : '') + (title.indexOf('lang.') > -1 ? $t(title) : title)" :visible="visible" @close="closeDialog"
                :width="width" style="margin-bottom: 20px" :append-to-body="innder" :close-on-click-modal="false">
         <template v-if="!isScroll">
             <slot></slot>
@@ -23,7 +23,7 @@
                         <el-button :size="size" :loading="loading"
                                    :type="okBtnOption.type ? okBtnOption.type : 'primary'" @click="onOk">
                             <i :class="okBtnOption.icon.indexOf('el') > 0 ? [okBtnOption.icon] : ['icon', 'iconfont', okBtnOption.icon]"></i>
-                            {{$t(okBtnOption.name)}}
+                            {{okBtnOption.name.indexOf('lang.') > -1 ? $t(okBtnOption.name) : okBtnOption.name}}
                         </el-button>
                     </template>
                     <template v-else>

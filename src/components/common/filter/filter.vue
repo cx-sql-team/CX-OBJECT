@@ -7,7 +7,7 @@
                     <li :id="'searchDrag_' + index" draggable="true" @dragstart="($event) => drag($event, index)"
                         @dragend.stop="($event) => $event.preventDefault()" v-for="(it,index) in data" :key="index">
                         <i class="el-icon-arrow-right"></i>
-                        <p>{{$t(it.label)}}</p>
+                        <p>{{it.label.indexOf('lang.') > -1 ? $t(it.label) : it.label}}</p>
                     </li>
                 </el-scrollbar>
             </ul>
@@ -21,7 +21,7 @@
                         @drop="($event) => drop($event)" @dragover="(ev) => dragover(ev, index, it)">
                         <template v-if="!it.kong">
                             <i class="el-icon-close" @click.stop="() =>dele(index)"></i>
-                            <p>{{$t(it.label)}}</p>
+                            <p>{{it.label.indexOf('lang.') > -1 ? $t(it.label) : it.label}}</p>
                         </template>
                         <template v-else>
                             <div id="searchDrag_kong" style="background: #f1eae1; height: 50px"></div>

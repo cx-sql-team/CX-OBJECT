@@ -57,6 +57,15 @@ const mutations = {
             stat.defoultTag = `${seletTagRes.name},${seletTagRes.icon},${seletTagRes.title}`;
         }
     },
+    resetState(stat: any, payload: any) {
+        stat.menu = [{
+            title: 'Home',
+            icon: 'icon-shouye',
+            name: 'Home',
+            closable: false,
+        }];
+        stat.defoultTag = 'Home,icon-shouye,Home';
+    },
 };
 
 const getters = {

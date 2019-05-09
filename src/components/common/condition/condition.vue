@@ -12,7 +12,7 @@
         -->
         <template v-if="option.type === 'text'">
             <el-form-item :style="Object.assign({display: option.isHidden ? 'none' : 'inline-block'}, option.style)"
-                          :label="type !== 'search' && type !== 'tableEditor' ? $t(option.name)+ ':' : ''"
+                          :label="type !== 'search' && type !== 'tableEditor' ? (option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name)+ ':' : ''"
                           :prop="option.field" :ref="option.ref" @keyup.enter.native="search">
                 <el-input :clearable="!option.nolearable"
                           @change="(value) => option.change && option.change(value)"
@@ -20,7 +20,7 @@
                           :size="size"
                           :disabled="option.disabled ? true : false"
                           v-model="form[option.field]"
-                          :placeholder="type === 'search' ? $t(option.name) : ''"
+                          :placeholder="type === 'search' ? (option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name) : ''"
                           :style="{width: type !== 'skip' && type !== 'tableEditor' ? option.width ? option.width + 'px' :  width+'px' : '100%'}"
                 />
             </el-form-item>
@@ -40,7 +40,7 @@
                     <el-checkbox style="margin-right: 5px" :size="size" :disabled="option.checkboxDisabled"
                                  v-if="option.checkbox && !option.checkbox.hidden" v-model="option.checkbox.default"
                                  @change="option.checkbox.change"></el-checkbox>
-                    {{type !== 'search' && type !== 'tableEditor' ? $t(option.name)+ ' :' : ''}}
+                    {{type !== 'search' && type !== 'tableEditor' ? (option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name)+ ' :' : ''}}
                 </span>
                 <div :style="{width: option.width ? option.width + 'px' : '100%', fontWeight: option.bold && 'bold', color: option.color && option.color, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'}"
                      :title="form[option.field]">
@@ -54,7 +54,7 @@
         <!--
         -->
         <template v-if="option.type === 'title'">
-            <el-form-item :style="{display: option.isHidden ? 'none' : 'inline-block'}" :label="$t(option.name)"
+            <el-form-item :style="{display: option.isHidden ? 'none' : 'inline-block'}" :label="option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name"
                           :prop="option.field" :ref="option.ref" @keyup.enter.native="search">
 
             </el-form-item>
@@ -71,7 +71,7 @@
         width：输入框长度
         -->
         <template v-if="option.type === 'number'">
-            <el-form-item :label="type !== 'search' && type !== 'tableEditor' ? $t(option.name)+ ':' : ''"
+            <el-form-item :label="type !== 'search' && type !== 'tableEditor' ? (option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name)+ ':' : ''"
                           :prop="!tableData ? option.field : (option.field + tableIndex)" :ref="option.ref"
                           @keyup.enter.native="search">
                 <div :style="{width: type !== 'skip' && type !== 'tableEditor' ? option.width ? option.width + 'px' :  width+'px' : '100%'}">
@@ -120,7 +120,7 @@
         change: 选择时间val为选中值
         -->
         <template v-if="option.type === 'combo'">
-            <el-form-item :label="$t(option.name)" :prop="option.field" :ref="option.ref" @keyup.enter.native="search">
+            <el-form-item :label="option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name" :prop="option.field" :ref="option.ref" @keyup.enter.native="search">
                 <el-select
                         clearable
                         :multiple="option.multiple && true"
@@ -158,13 +158,13 @@
         requestItemKeys: 联级查询 key值字段
         -->
         <template v-if="option.type === 'otherCombo'">
-            <el-form-item :label="type !== 'search' && type !== 'tableEditor' ? $t(option.name)+ ':' : ''"
+            <el-form-item :label="type !== 'search' && type !== 'tableEditor' ? (option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name)+ ':' : ''"
                           :prop="option.field" :ref="option.ref" @keyup.enter.native="search">
                 <el-select
                         :clearable="option.noClearable ? false : true"
                         :multiple="option.multiple && true"
                         :collapse-tags="option.multiple && true"
-                        :placeholder="type === 'search' ? $t(option.name) : ''"
+                        :placeholder="type === 'search' ? (option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name) : ''"
                         :remote="option.filterable"
                         :remote-method="option.filterable && remoteMethod"
                         :loading="loading"
@@ -207,7 +207,7 @@
         requestItemKeys: 联级查询 key值字段
         -->
         <template v-if="option.type === 'autoCombo'">
-            <el-form-item :label="type !== 'search' && type !== 'tableEditor' ? $t(option.name)+ ':' : ''"
+            <el-form-item :label="type !== 'search' && type !== 'tableEditor' ? (option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name)+ ':' : ''"
                           :prop="option.field" :ref="option.ref" @keyup.enter.native="search">
                 <el-autocomplete
                         popper-class="my-autocomplete"
@@ -215,7 +215,7 @@
                         :style="{width: option.width ? option.width  + 'px' : option.range ? (width*2 + 12 + (labelWidth ? labelWidth : 90))+ 'px' : width+'px'}"
                         :fetch-suggestions="querySearchAsync"
                         :size="size"
-                        :placeholder="type === 'search' ? $t(option.name) : ''"
+                        :placeholder="type === 'search' ? (option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name) : ''"
                 >
                     <template slot-scope="{ item }">
                         <p class="name">{{ item.value }}</p>
@@ -235,7 +235,7 @@
         hms:含时分秒
         -->
         <template v-if="option.type === 'datetime'">
-            <el-form-item :label="$t(option.name)" :prop="option.field" :ref="option.ref">
+            <el-form-item :label="option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name" :prop="option.field" :ref="option.ref">
                 <el-date-picker
                         clearable
                         v-model="form[option.field]"
@@ -262,7 +262,7 @@
         hms:含时分秒
         -->
         <template v-if="option.type === 'date'">
-            <el-form-item :label="type !== 'search' && type !== 'tableEditor' ? $t(option.name)+ ':' : ''"
+            <el-form-item :label="type !== 'search' && type !== 'tableEditor' ? (option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name)+ ':' : ''"
                           :prop="option.field" :ref="option.ref">
                 <el-date-picker
                         clearable
@@ -276,7 +276,7 @@
                         range-separator="至"
                         start-placeholder="开始日期"
                         end-placeholder="结束日期"
-                        :placeholder="type === 'search' ? $t(option.name) : ''"
+                        :placeholder="type === 'search' ? (option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name) : ''"
                         :picker-options="{
                           disabledDate(time) {
                             return option.limit ? option.limit(time.getTime()) : false;
@@ -295,7 +295,7 @@
         range：范围日期框
         -->
         <template v-if="option.type === 'time'">
-            <el-form-item :label="$t(option.name)" :prop="option.field" :ref="option.ref">
+            <el-form-item :label="option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name" :prop="option.field" :ref="option.ref">
                 <el-time-picker
                         clearable
 
@@ -320,7 +320,7 @@
         data：复选框数据 如[周一，周二，周三，周四，周五，周六]
         -->
         <template v-if="option.type === 'checkbox'">
-            <el-form-item :label="$t(option.name)" :prop="!tableData ? option.field : option.field + tableIndex"
+            <el-form-item :label="option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name" :prop="!tableData ? option.field : option.field + tableIndex"
                           :ref="option.ref">
                 <div :style="{width: type !== 'skip' && type !== 'tableEditor' ? option.width ? option.width + 'px' :  width+'px' : '100%'}">
                     <template v-if="!tableData">
@@ -353,7 +353,7 @@
         defaultValue: 默认值 默认为1
         -->
         <template v-if="option.type === 'switch'">
-            <el-form-item :label="$t(option.name)" :prop="option.field" :ref="option.ref" @keyup.enter.native="search">
+            <el-form-item :label="option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name" :prop="option.field" :ref="option.ref" @keyup.enter.native="search">
                 <el-switch
                         :size="size"
                         :style="{width: option.width ? option.width :  width+'px'}"
@@ -374,7 +374,7 @@
         maxlength：最大字数
         -->
         <template v-if="option.type === 'area'">
-            <el-form-item :label="$t(option.name) + ':'" :prop="option.field" :ref="option.ref"
+            <el-form-item :label="(option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name) + ':'" :prop="option.field" :ref="option.ref"
                           @keyup.enter.native="search">
                 <el-input
                         type="textarea"
@@ -395,7 +395,7 @@
         width：输入框长度
         -->
         <template v-if="option.type === 'address'">
-            <el-form-item :label="$t(option.name)" :prop="option.field" :ref="option.ref" @keyup.enter.native="search">
+            <el-form-item :label="option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name" :prop="option.field" :ref="option.ref" @keyup.enter.native="search">
                 <el-cascader
                         :size="size"
                         :style="{width: option.width ? option.width  + 'px' :  width+'px'}"
@@ -414,7 +414,7 @@
         width：输入框长度
         -->
         <template v-if="option.type === 'icon'">
-            <el-form-item :label="$t(option.name)" :prop="option.field" :ref="option.ref">
+            <el-form-item :label="option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name" :prop="option.field" :ref="option.ref">
                 <el-select popper-class="icon-combo" clearable v-model="form[option.field]" filterable :size="size"
                            :style="{width: option.width ? option.width  + 'px' :  width-30+'px'}"
                            @keyup.enter.native="search">
@@ -448,7 +448,7 @@
         }
         -->
         <template v-if="option.type === 'pic'">
-            <el-form-item :label="type !== 'search' && type !== 'tableEditor' ? $t(option.name)+ ':' : ''"
+            <el-form-item :label="type !== 'search' && type !== 'tableEditor' ? (option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name)+ ':' : ''"
                           :prop="option.field" :ref="option.ref">
                 <upload :opt="option" :form="form" :onlyPic="option.onlyPic"></upload>
             </el-form-item>
@@ -456,7 +456,7 @@
 
 
         <template v-if="option.type === 'datatype'">
-            <el-form-item :label="type !== 'search' ? $t(option.name)+ ':' : ''" :prop="option.field" :ref="option.ref">
+            <el-form-item :label="type !== 'search' ? (option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name)+ ':' : ''" :prop="option.field" :ref="option.ref">
                 <el-date-picker
                         clearable
                         :disabled="option.disabled"
@@ -464,7 +464,7 @@
                         :size="size"
                         :style="{width: type !== 'skip' && type !== 'tableEditor' ? option.width ? option.width + 'px' :  width+'px' : '100%'}"
                         :type="option.dateType"
-                        :placeholder="$t(option.name)"
+                        :placeholder="option.name.indexOf('lang.') > -1 ? $t(option.name) : option.name"
                         :value-format="option.dateType === 'month' ? 'yyyyMM' : 'yyyy'"
                         @change="(val) => option.change && option.change(val)"
                 >
